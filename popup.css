@@ -1,0 +1,79 @@
+:root {
+    --transition-duration: 0.5s;
+    --btn-dark-purple: #3D1389FF;
+    --btn-light-purple: #9162E8FF;
+    --popup-top: 40%;
+}
+
+body {
+    margin: 0;
+    background: #111112;
+    font-family: Arial, monospace, sans-serif;
+}
+
+.popup {
+    background: #1e1e2f;
+    width: 400px;
+    color: white;  
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    top: var(--popup-top); 
+    margin: auto;
+    left: 0;
+    right: 0;
+    box-shadow: 1px 5px 5px black;
+  /*  visibility: hidden; */
+}
+
+@keyframes slide-top {
+  0%  {
+    top: 1%
+    }
+    100% {
+        top: var(--popup-top);
+    }
+}
+
+.popup-open {
+    opacity: 1;
+    visibility: visible;
+    animation: slide-top 0.5s;
+}
+
+.popup-close {
+    visibility: hidden;
+    opacity: 0;
+   transition: visibility 0s 0.5s, opacity 0.5s, linear;
+}
+
+.popup-title {
+    font-weight: 700;
+}
+
+.popup-desc {
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.popup-buttons {
+    float: right;
+}
+
+.btn:not(:hover),
+.btn {
+    transition: 0.5s;
+    text-decoration-color: initial;
+    background: transparent;
+    color: #9162E8FF;
+    border: 1px solid var(--btn-dark-purple);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 7px;
+    min-width: 50px;
+}
+
+.btn:hover {
+    color: white;
+    background: var(--btn-dark-purple);
+}
